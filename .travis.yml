@@ -4,10 +4,17 @@ services:
 
 before_install:
   - docker build -t dponnada/docker-react -f Dockerfile.dev .
+   
+branches:
+    except:
+        - main
+
+branches:
+    only:
+        - master
 
   script:
     - docker run dponnada/docker-react npm run test -- --coverage 
 
-    branches:
-        only:
-            - master
+
+ 
