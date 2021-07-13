@@ -7,3 +7,7 @@ before_install:
 
   script:
     - docker run dponnada/docker-react npm run test -- --coverage 
+
+    branches:
+        only:
+            - master
